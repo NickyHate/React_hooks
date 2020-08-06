@@ -11,7 +11,7 @@ function App() {
   };
   return (
     <div className="App">
-      <button onClick={getSquare}>Нажми</button>
+      <button onClick={getSquare}>Нажми меня</button>
     </div>
   );
 }
