@@ -3,15 +3,15 @@ import "./App.css";
 
 function App() {
   const [x, setX] = useState(0);
-
+ 
   const getSquare = () => {
-    setX(2);
+    setX(x+1);
     const sum = x * x;
     console.log(sum);
   };
   return (
     <div className="App">
-      <button onClick={getSquare()}>Нажми</button>
+      <button onClick={getSquare}>Нажми</button>
     </div>
   );
 }
