@@ -10,11 +10,17 @@ function App() {
   ];
   const [x, setX] = useState(0);
   const [cars, setCars] = useState(initialValues);
+  
+  const name = "ford";
+  const model = "focus";
+  const bool = true;
+
+  const newCar = {car : name, model: model, isNew : bool };
 
   const getCars = () => {
     setCars((prevState) => [
       ...prevState,
-      { car: "lada", model: "priora", isNew: false },
+      newCar
     ]);
     console.log(cars);
   };
@@ -39,11 +45,11 @@ function App() {
       <div>
         {cars.map((car) => {
           return (
-            <>
-              <div>{car.car}</div>
-              <div>{car.model}</div>
-              <div>{car.isNew}</div>
-            </>
+            <div key={car.model}>
+              <div >{car.car}</div>
+              <div >{car.model}</div>
+              <div >{car.isNew}</div>
+            </div>
           );
         })}
       </div>
