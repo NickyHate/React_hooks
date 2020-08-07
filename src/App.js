@@ -3,14 +3,13 @@ import "./App.css";
 
 function App() {
   const [x, setX] = useState(0);
- 
+  const sum = x * x;
   const getSquare = () => {
-    setX(x+1);
-    const sum = x * x;
-    console.log(sum);
+    setX(x+1);      
   };
   return (
     <div className="App">
+      <p>{sum}</p>
       <button onClick={getSquare}>Нажми меня</button>
     </div>
   );
