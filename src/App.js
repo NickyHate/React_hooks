@@ -31,7 +31,7 @@ function App() {
     fetch(
       "https://api.nasa.gov/planetary/apod?api_key=PPxbIO1hHRG2vJGHFRAH6L36hoBHSRk52xOgpwt9"
     ).then((response) => {
-      console.log(response);
+      console.log(JSON.stringify(response.date));
     });
   }, []);
   return (
