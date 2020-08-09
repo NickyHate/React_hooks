@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import uuid from 'react-uuid';
+import uuid from "react-uuid";
 import "./App.css";
 
 function App() {
@@ -28,11 +28,11 @@ function App() {
     setX(x + 1);
   };
   useEffect(() => {
-    fetch("https://worldtimeapi.org/api/timezone/Africa/Ceuta").then(
-      (response) => {
-        console.log(response.json());
-      }
-    );
+    fetch(
+      "https://api.nasa.gov/planetary/apod?api_key=PPxbIO1hHRG2vJGHFRAH6L36hoBHSRk52xOgpwt9"
+    ).then((response) => {
+      console.log(response);
+    });
   }, []);
   return (
     <div className="App">
