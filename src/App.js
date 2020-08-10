@@ -31,25 +31,29 @@ function App() {
     fetch(
       "https://api.nasa.gov/planetary/apod?api_key=PPxbIO1hHRG2vJGHFRAH6L36hoBHSRk52xOgpwt9"
     ).then((response) => {
-      console.log(JSON.stringify(response.date));
-    });
+        return response.json()
+    }).then((view) => {
+        console.log(view);
+    })
   }, []);
 
   const p = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("done 1");
-      console.log('1')
+      console.log("1");
     }, 3000);
-  }).then((result) => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve("done 1");
-        console.log('2')
-      }, 3000);
+  })
+    .then((result) => {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("done 1");
+          console.log("2");
+        }, 3000);
+      });
+    })
+    .then((result) => {
+      return console.log(result);
     });
-  }).then((result) => {
-    return console.log(result);
-  });
 
   return (
     <div className="App">
