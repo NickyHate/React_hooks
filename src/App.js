@@ -9,6 +9,13 @@ function App() {
     { car: "audi", model: "q7", isNew: true },
     { car: "ford", model: "focus", isNew: false },
   ];
+  const array = new Array(5).fill(null).map(( it, index) => index + 1);
+
+  const p1 = Promise.all(array.map( it => {
+      
+  }))
+
+
   const [x, setX] = useState(0);
   const [cars, setCars] = useState(initialValues);
 
@@ -33,9 +40,10 @@ function App() {
     ).then((response) => {
         return response.json()
     }).then((view) => {
-        console.log(view);
+        return view;
     })
-  }, []);
+  });
+
 
   const p = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -71,6 +79,9 @@ function App() {
             </div>
           );
         })}
+        <div>
+
+        </div>
       </div>
     </div>
   );
