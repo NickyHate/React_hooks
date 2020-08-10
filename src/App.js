@@ -34,6 +34,23 @@ function App() {
       console.log(JSON.stringify(response.date));
     });
   }, []);
+
+  const p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("done 1");
+      console.log('1')
+    }, 3000);
+  }).then((result) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve("done 1");
+        console.log('2')
+      }, 3000);
+    });
+  }).then((result) => {
+    return console.log(result);
+  });
+
   return (
     <div className="App">
       <div className="title">{x}</div>
